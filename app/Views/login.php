@@ -1,4 +1,4 @@
-<?php require __DIR__.'/../Template/header.php'?>
+<?php require __DIR__.'/../Template/head.php'?>
 
 
   <div class="container-sm d-flex justify-content-center align-items-center vh-100 ">
