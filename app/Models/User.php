@@ -2,45 +2,41 @@
 
 namespace App\Models;
 
-use mysqli;
+use App\Core\Database;
+
 
 class User
 {
-  private $db;
-
-  public function __construct()
-  {
-    // Configuração de conexão com o banco de dados
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $this->db = new mysqli('localhost', 'root', '', 'CCRM');
-
-    if ($this->db->connect_error) {
-      die("Conexão falhou: " . $this->db->connect_error);
-    }
-  }
 
   public function authenticate($email, $password)
   {
+
+    $dbConect = new Database();
+
+
+    // Usar a conexão estática para preparar a consulta
+    $pdo = $dbConect->connect(); // Acessa a conexão com o banco de dados
+
     // Prevenir injeção SQL com prepared statements
-    $stmt = $this->db->prepare("SELECT ID, PASSWORD AS password FROM USUARIOS WHERE EMAIL = ?");
-    $stmt->bind_param('s', $email);
+    $stmt = $pdo->prepare("SELECT ID, PASSWORD FROM USUARIOS WHERE EMAIL = ?");
+    $stmt->bindParam(1, $email, $pdo::PARAM_STR); // bindParam ao invés de bind_param
     $stmt->execute();
-    $result = $stmt->get_result();
+    $result = $stmt->fetch($pdo::FETCH_ASSOC);
 
     // Verificar se o usuário existe
-    if ($result->num_rows > 0) {
-      $user = $result->fetch_assoc();
+    if ($result) {
       // Verificar se a senha corresponde ao hash armazenado no banco
-      // if (password_verify($password, $user['password'])) {
-      if ($password === $user['password']) {
+      // if (password_verify($password, $result['PASSWORD'])) {
+      if ($password === $result['PASSWORD']) {
         return true;
       } else {
         echo "<script>alert('Senha incorreta!')</script>";
       }
+
+      return false;
     } else {
       echo "<script>alert('Usuário não encontrado!')</script>";
+      return false;
     }
-
-    return false;
   }
 }
