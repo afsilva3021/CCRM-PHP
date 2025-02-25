@@ -1,9 +1,11 @@
-navbar {
-  background-color:  #12263f;
-  color: #ffff;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.cards {
+  width: 100%;
+  display: flex;
 }
 
-
-main {
-  background-color: #12263f;
+.cards .cards-header {
+  width: 300px;
+  background-color: #0000;
 }
