@@ -10,7 +10,7 @@ Este é um sistema de Gestão de Relacionamento com o Cliente, desenvolvido em *
 - Composer (Autoload - PSR-4)
 - MySQL ou Mariadb
 - PDO (Conexão com Banco de Dados)
-- Twig 3+
+- Twig 3.20
 - vlucas/phpdotenv (Gerenciamento de variáveis de ambiente)
 
 ---
