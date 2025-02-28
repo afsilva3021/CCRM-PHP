@@ -1,6 +1,6 @@
 # CRM - Sistema de Gestão de Relacionamento com o Cliente
 
-Este é um sistema de Gestão de Relacionamento com o Cliente, desenvolvido em **PHP** seguindo o padrão **PSR-4**, com autenticação de usuários e super anúncios.
+Este é um sistema de Gestão de Relacionamento com o Cliente, desenvolvido em **PHP** seguindo o padrão **PSR-4**.
 
 ---
 
