@@ -29,8 +29,8 @@ cd CCRM
 
 
 ### 🔹 3. Configurar as variáveis de ambiente
-- Alteri o arquivo .env com sua informações referente
-- Ao seu banco de dados
+- Alteri o arquivo .env com sua informações referente seu banco de dados
+- Banco de dados utilizado no projeto mariadb
 
 - Exemplo
 
