@@ -35,7 +35,7 @@ cd CCRM
 - Exemplo
 
 - DB_HOST=localhost
-- DB_NAME=loja_carros
+- DB_NAME=CCRM
 - DB_USER=root
 - DB_PASS=
 
