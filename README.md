@@ -10,6 +10,7 @@ Este é um sistema de Gestão de Relacionamento com o Cliente, desenvolvido em *
 - Composer (Autoload - PSR-4)
 - MySQL ou Mariadb
 - PDO (Conexão com Banco de Dados)
+- Twig 3+
 - vlucas/phpdotenv (Gerenciamento de variáveis de ambiente)
 
 ---
@@ -26,6 +27,7 @@ cd CCRM
 ### 🔹 2. Instalar as dependências
 - composer install
 
+
 ### 🔹 3. Configurar as variáveis de ambiente
 - Alteri o arquivo .env com sua informações referente
 - Ao seu banco de dados
@@ -40,7 +42,7 @@ cd CCRM
 ### Comando SQL para criar a base de dados
 - CREATE  DATABASE CCRM SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-### 🔹 5. Rodar o projeto
+### 🔹 4. Rodar o projeto
 - Windows / Linux Comando via shell ou PowerShell php -S localhost:8000
 - Utilizando xampp Windows clonar respositorio na pasta c:\xampp\htdocs\
 - Utilizando Apache2 linux clonar repositorio na pasta /var/www/html/
