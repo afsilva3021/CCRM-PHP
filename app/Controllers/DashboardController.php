@@ -2,11 +2,20 @@
 
 namespace App\Controllers;
 
-use App\Models\User;
+use Twig\Environment;
 
 class DashboardController
 {
-  public static function dash()
+
+  private $twig;
+
+  public function __construct(Environment $twig)
+  {
+    $this->twig = $twig;
+  }
+
+
+  public function dash()
   {
     // Verifica se o usuário está logado
     session_start();
@@ -19,6 +28,9 @@ class DashboardController
     }
 
     // Exibe o dashboard
-    require __DIR__ . '/../Views/dashboard.php';
+    echo $this->twig->render('dashboard.html', [
+      'titulo' => "Dashbaord",
+      'messagem' => 5,
+    ]);
   }
 }

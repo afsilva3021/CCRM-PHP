@@ -1,3 +1,0 @@
-git add .gitattributes
-git commit -m "Corrigindo detecção de linguagem no GitHub"
-git push origin main  # ou o nome da sua branch principal
